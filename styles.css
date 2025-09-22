@@ -92,6 +92,11 @@ body {
     opacity: 0;
     transition: opacity 0.8s ease;
     pointer-events: none;
+    width: 200px;
+    max-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .text-overlay.visible {
@@ -99,39 +104,30 @@ body {
 }
 
 .text-overlay p {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     color: #000;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: lowercase;
-    letter-spacing: 0.1em;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    hyphens: auto;
+    /* Strong drop shadow for readability against white background */
+    text-shadow: 
+        3px 3px 6px rgba(255, 255, 255, 1),
+        0 0 10px rgba(255, 255, 255, 1),
+        0 0 15px rgba(255, 255, 255, 0.9),
+        -2px -2px 4px rgba(255, 255, 255, 1),
+        2px 2px 4px rgba(255, 255, 255, 1),
+        0 0 20px rgba(255, 255, 255, 0.8);
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1)) 
+            drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
 }
 
-/* White Circle Overlay */
-.white-circle-overlay {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    background: white;
-    z-index: 5;
-    opacity: 0;
-    transition: width 0.1s ease-out, height 0.1s ease-out, opacity 0.3s ease;
-    pointer-events: none;
-    will-change: width, height;
-}
-
-.white-circle-overlay.growing {
-    opacity: 1;
-}
+/* White Circle Overlay - removed, no longer used */
 
 /* Products Section */
 .products-section {
@@ -195,22 +191,49 @@ body {
 
 /* SVG Animation Classes */
 .diamond {
-    transition: fill 0.6s ease, opacity 0.4s ease;
+    will-change: fill, stroke;
+    transition: fill 0.8s ease-in-out, stroke 0.8s ease-in-out;
 }
 
-.diamond.bw {
-    fill: #fff !important;
+/* Ring rotation animations - alternating clockwise and counterclockwise */
+.ring-group {
+    transform-origin: 0 0; /* Origin at center (500, 500) after translate */
+    will-change: transform;
+    --ring-scale: 1; /* CSS variable for scroll-based scaling */
 }
 
-.diamond.bw-alt {
-    fill: #000 !important;
+.ring-group[data-ring] {
+    animation: rotateRing 20s linear infinite;
+}
+
+/* Even rings rotate clockwise */
+.ring-group[data-ring]:nth-child(even) {
+    animation-direction: normal;
+}
+
+/* Odd rings rotate counterclockwise */
+.ring-group[data-ring]:nth-child(odd) {
+    animation-direction: reverse;
+}
+
+@keyframes rotateRing {
+    from {
+        transform: translate(500px, 500px) rotate(0deg) scale(var(--ring-scale));
+    }
+    to {
+        transform: translate(500px, 500px) rotate(360deg) scale(var(--ring-scale));
+    }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+    .text-overlay {
+        width: 180px;
+    }
+    
     .text-overlay p {
-        font-size: 1rem;
-        padding: 0.8rem 1.5rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
     }
     
     .nav-container {
