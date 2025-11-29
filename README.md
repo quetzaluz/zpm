@@ -1,6 +1,6 @@
 # Zero Point Mandalas - Demo Site
 
-A demo site featuring four splash page prototypes with animated SVG mandalas.
+A demo site featuring four splash page prototypes with animated SVG mandalas. It's fun to work with artists!
 
 ## Setup for GitHub Pages
 

@@ -163,6 +163,9 @@ body {
     border-radius: 8px;
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .product-card:hover {
@@ -239,6 +242,7 @@ body {
     .nav-container {
         gap: 1rem;
         padding: 0 1rem;
+        flex-wrap: wrap;
     }
     
     .nav-link {

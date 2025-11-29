@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's High-Top Canvas Shoes - Zero Point Mandalas</title>
+    <link rel="stylesheet" href="styles-product-v2.css">
+</head>
+<body>
+    <nav class="nav-menu visible">
+        <div class="nav-container">
+            <a href="version2.html" class="nav-link">← Back</a>
+            <a href="version1.html" class="nav-link">Version 1</a>
+            <a href="version2.html" class="nav-link">Version 2</a>
+            <a href="version3.html" class="nav-link">Version 3</a>
+            <a href="version4.html" class="nav-link">Version 4</a>
+        </div>
+    </nav>
+
+    <main class="product-page">
+        <div class="product-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="assets/products/mens-high-top-canvas-shoes-black-front-68f965fbe819f.jpg.webp" alt="Shoes Front" id="mainImage">
+                </div>
+                <div class="thumbnail-images">
+                    <img src="assets/products/mens-high-top-canvas-shoes-black-front-68f965fbe819f.jpg.webp" alt="Front" class="thumbnail active" onclick="changeImage('assets/products/mens-high-top-canvas-shoes-black-front-68f965fbe819f.jpg.webp')">
+                    <img src="assets/products/mens-high-top-canvas-shoes-black-front-2-68f965fbe9200.jpg.webp" alt="Front 2" class="thumbnail" onclick="changeImage('assets/products/mens-high-top-canvas-shoes-black-front-2-68f965fbe9200.jpg.webp')">
+                    <img src="assets/products/mens-high-top-canvas-shoes-black-left-front-68f965fbeb2f1.jpg.webp" alt="Left Front" class="thumbnail" onclick="changeImage('assets/products/mens-high-top-canvas-shoes-black-left-front-68f965fbeb2f1.jpg.webp')">
+                    <img src="assets/products/mens-high-top-canvas-shoes-black-right-68f965fbebf05.jpg.webp" alt="Right" class="thumbnail" onclick="changeImage('assets/products/mens-high-top-canvas-shoes-black-right-68f965fbebf05.jpg.webp')">
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <h1>Men's High-Top Canvas Shoes</h1>
+                <p class="price">$75.00</p>
+                <p class="description">Step out in style with these high-top canvas shoes featuring our mandala designs. Comfortable, durable, and perfect for everyday wear.</p>
+                
+                <div class="product-options">
+                    <div class="option-group">
+                        <label>Size:</label>
+                        <div class="chip-group">
+                            <button class="chip active" data-value="7">7</button>
+                            <button class="chip" data-value="8">8</button>
+                            <button class="chip" data-value="9">9</button>
+                            <button class="chip" data-value="10">10</button>
+                            <button class="chip" data-value="11">11</button>
+                            <button class="chip" data-value="12">12</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart">Add to Cart</button>
+                
+                <div class="product-details">
+                    <h3>Details</h3>
+                    <ul>
+                        <li>High-top design</li>
+                        <li>Canvas upper with mandala print</li>
+                        <li>Rubber sole</li>
+                        <li>Lace-up closure</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.src.includes(src.split('/').pop())) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+        
+        // Chip selection
+        document.querySelectorAll('.chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                const group = this.closest('.chip-group');
+                group.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+

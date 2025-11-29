@@ -129,6 +129,7 @@ body {
     .nav-container {
         gap: 1rem;
         padding: 0 1rem;
+        flex-wrap: wrap;
     }
     
     .nav-link {

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-Over-Print One-Piece Swimsuit - Zero Point Mandalas</title>
+    <link rel="stylesheet" href="styles-product-v1.css">
+</head>
+<body>
+    <nav class="nav-menu visible">
+        <div class="nav-container">
+            <a href="version1.html" class="nav-link">← Back</a>
+            <a href="version1.html" class="nav-link">Version 1</a>
+            <a href="version2.html" class="nav-link">Version 2</a>
+            <a href="version3.html" class="nav-link">Version 3</a>
+            <a href="version4.html" class="nav-link">Version 4</a>
+        </div>
+    </nav>
+
+    <main class="product-page">
+        <div class="product-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="assets/products/all-over-print-one-piece-swimsuit-white-front-68f9636073172.jpg.webp" alt="Swimsuit Front" id="mainImage">
+                </div>
+                <div class="thumbnail-images">
+                    <img src="assets/products/all-over-print-one-piece-swimsuit-white-front-68f9636073172.jpg.webp" alt="Front" class="thumbnail active" onclick="changeImage('assets/products/all-over-print-one-piece-swimsuit-white-front-68f9636073172.jpg.webp')">
+                    <img src="assets/products/all-over-print-one-piece-swimsuit-white-back-68f9636074703.jpg.webp" alt="Back" class="thumbnail" onclick="changeImage('assets/products/all-over-print-one-piece-swimsuit-white-back-68f9636074703.jpg.webp')">
+                    <img src="assets/products/all-over-print-one-piece-swimsuit-white-left-68f963607424e.jpg.webp" alt="Left" class="thumbnail" onclick="changeImage('assets/products/all-over-print-one-piece-swimsuit-white-left-68f963607424e.jpg.webp')">
+                    <img src="assets/products/all-over-print-one-piece-swimsuit-white-right-68f9636073d5b.jpg.webp" alt="Right" class="thumbnail" onclick="changeImage('assets/products/all-over-print-one-piece-swimsuit-white-right-68f9636073d5b.jpg.webp')">
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <h1>All-Over-Print One-Piece Swimsuit</h1>
+                <p class="price">$65.00</p>
+                <p class="description">Make a splash with this stunning one-piece swimsuit featuring our vibrant mandala patterns. Comfortable, stylish, and perfect for poolside or beach adventures.</p>
+                
+                <div class="product-options">
+                    <div class="option-group">
+                        <label>Size:</label>
+                        <div class="chip-group">
+                            <button class="chip active" data-value="xs">XS</button>
+                            <button class="chip" data-value="s">S</button>
+                            <button class="chip" data-value="m">M</button>
+                            <button class="chip" data-value="l">L</button>
+                            <button class="chip" data-value="xl">XL</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart">Add to Cart</button>
+                
+                <div class="product-details">
+                    <h3>Details</h3>
+                    <ul>
+                        <li>All-over mandala print</li>
+                        <li>Chlorine resistant fabric</li>
+                        <li>Adjustable straps</li>
+                        <li>Machine washable</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.src.includes(src.split('/').pop())) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+        
+        // Chip selection
+        document.querySelectorAll('.chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                const group = this.closest('.chip-group');
+                group.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
