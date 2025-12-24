@@ -73,16 +73,14 @@ body {
 /* Text Overlay */
 .text-overlay {
     position: fixed;
-    top: 50%;
+    bottom: 3rem;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 10;
     text-align: center;
     opacity: 0;
     transition: opacity 0.8s ease;
     pointer-events: none;
-    width: 200px;
-    max-width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,27 +91,19 @@ body {
 }
 
 .text-overlay p {
-    font-size: 0.9rem;
-    color: #000;
-    font-weight: 600;
+    font-size: 0.95rem;
+    color: #fff;
+    font-weight: 500;
     text-transform: lowercase;
-    letter-spacing: 0.08em;
-    line-height: 1.4;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
     text-align: center;
     margin: 0;
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.9);
+    padding: 0.6rem 1.2rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
-    word-wrap: break-word;
-    text-shadow: 
-        2px 2px 0px #fff,
-        -2px -2px 0px #fff,
-        2px -2px 0px #fff,
-        -2px 2px 0px #fff,
-        0px 2px 0px #fff,
-        0px -2px 0px #fff,
-        2px 0px 0px #fff,
-        -2px 0px 0px #fff;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
 }
 
 /* Products Section */

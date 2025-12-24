@@ -84,16 +84,14 @@ body {
 /* Text Overlay */
 .text-overlay {
     position: fixed;
-    top: 50%;
+    bottom: 3rem;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 10;
     text-align: center;
     opacity: 0;
     transition: opacity 0.8s ease;
     pointer-events: none;
-    width: 200px;
-    max-width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,27 +102,19 @@ body {
 }
 
 .text-overlay p {
-    font-size: 0.9rem;
-    color: #000;
-    font-weight: 600;
+    font-size: 0.95rem;
+    color: #fff;
+    font-weight: 500;
     text-transform: lowercase;
-    letter-spacing: 0.08em;
-    line-height: 1.4;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
     text-align: center;
     margin: 0;
-    padding: 0;
-    word-wrap: break-word;
-    hyphens: auto;
-    /* Strong drop shadow for readability against white background */
-    text-shadow: 
-        3px 3px 6px rgba(255, 255, 255, 1),
-        0 0 10px rgba(255, 255, 255, 1),
-        0 0 15px rgba(255, 255, 255, 0.9),
-        -2px -2px 4px rgba(255, 255, 255, 1),
-        2px 2px 4px rgba(255, 255, 255, 1),
-        0 0 20px rgba(255, 255, 255, 0.8);
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1)) 
-            drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+    padding: 0.6rem 1.2rem;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 /* White Circle Overlay - removed, no longer used */
